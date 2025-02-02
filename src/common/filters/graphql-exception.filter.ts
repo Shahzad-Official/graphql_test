@@ -5,6 +5,7 @@ import {
   HttpException,
 } from '@nestjs/common';
 import { isArray } from 'class-validator';
+import { GraphQLError } from 'graphql';
 
 @Catch()
 export class GraphqlExceptionFilter implements ExceptionFilter {
@@ -15,7 +16,7 @@ export class GraphqlExceptionFilter implements ExceptionFilter {
     if (res) {
       console.log(res);
       if (isArray(res['message'])) {
-        console.log(res['message'][0]);
+        return new GraphQLError(res['message'][0]);
       }
     }
   }

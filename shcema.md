@@ -6,14 +6,16 @@
   * [Query](#query)
   * [Mutation](#mutation)
   * [Objects](#objects)
+    * [Cat](#cat)
     * [User](#user)
   * [Inputs](#inputs)
+    * [CreateCatInput](#createcatinput)
     * [CreateUserInput](#createuserinput)
+    * [UpdateCatInput](#updatecatinput)
     * [UpdateUserInput](#updateuserinput)
   * [Scalars](#scalars)
     * [Boolean](#boolean)
-    * [Float](#float)
-    * [ID](#id)
+    * [Int](#int)
     * [String](#string)
 
 </details>
@@ -42,6 +44,21 @@
 <tr>
 <td colspan="2" align="right" valign="top">id</td>
 <td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.cats">cats</strong></td>
+<td valign="top">[<a href="#cat">Cat</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.cat">cat</strong></td>
+<td valign="top"><a href="#cat">Cat</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#int">Int</a>!</td>
 <td></td>
 </tr>
 </tbody>
@@ -88,10 +105,64 @@
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="mutation.createcat">createCat</strong></td>
+<td valign="top"><a href="#cat">Cat</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">createCatInput</td>
+<td valign="top"><a href="#createcatinput">CreateCatInput</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="mutation.updatecat">updateCat</strong></td>
+<td valign="top"><a href="#cat">Cat</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">updateCatInput</td>
+<td valign="top"><a href="#updatecatinput">UpdateCatInput</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="mutation.removecat">removeCat</strong></td>
+<td valign="top"><a href="#cat">Cat</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
 ## Objects
+
+### Cat
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="cat.id">id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Example field (placeholder)
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### User
 
@@ -107,7 +178,7 @@
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong id="user.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
@@ -124,6 +195,29 @@
 </table>
 
 ## Inputs
+
+### CreateCatInput
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="createcatinput.id">id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+Example field (placeholder)
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### CreateUserInput
 
@@ -143,6 +237,25 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="createuserinput.email">email</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### UpdateCatInput
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="updatecatinput.id">id</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
@@ -172,7 +285,7 @@
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="updateuserinput.id">id</strong></td>
-<td valign="top"><a href="#float">Float</a>!</td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 </tbody>
@@ -184,13 +297,9 @@
 
 The `Boolean` scalar type represents `true` or `false`.
 
-### Float
+### Int
 
-The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
-
-### ID
-
-The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 
 ### String
 

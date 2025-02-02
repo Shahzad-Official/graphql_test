@@ -11,7 +11,6 @@ export class UsersResolver {
 
   @Mutation(() => User)
   createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
-    throw new BadRequestException();
     return this.usersService.create(createUserInput);
   }
 
@@ -22,7 +21,7 @@ export class UsersResolver {
 
   @Query(() => User, { name: 'user' })
   findOne(@Args('id') id: string) {
-    return this.usersService.findOne(+id);
+    return this.usersService.findOne(id);
   }
 
   @Mutation(() => User)
@@ -32,6 +31,6 @@ export class UsersResolver {
 
   @Mutation(() => Boolean)
   removeUser(@Args('id') id: string) {
-    return this.usersService.remove(+id);
+    return this.usersService.remove(id);
   }
 }

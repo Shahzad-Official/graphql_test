@@ -5,7 +5,7 @@ import { CreateUserInput } from './create-user.input';
 @InputType()
 export class UpdateUserInput extends PartialType(CreateUserInput) {
   @Field()
-  id: number;
+  id: string;
 
   @Field({ nullable: true })
   @IsOptional()

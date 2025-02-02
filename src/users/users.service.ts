@@ -18,7 +18,7 @@ export class UsersService {
     return this.users;
   }
 
-  findOne(id: number): User {
+  findOne(id: string): User {
     const user = this.users.find((user) => user.id === id);
     if (!user) throw new NotFoundException(`User with ID ${id} not found`);
     return user;
@@ -36,7 +36,7 @@ export class UsersService {
     return this.users[userIndex];
   }
 
-  remove(id: number): boolean {
+  remove(id: string): boolean {
     const userIndex = this.users.findIndex((user) => user.id === id);
     if (userIndex === -1)
       throw new NotFoundException(`User with ID ${id} not found`);
